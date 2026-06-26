@@ -1,18 +1,16 @@
 # prompt_config.yaml
 # LLM generation settings used in the paper's hallucination rate experiments.
 #
-# NOTE: Exact LLM-based generation requires API access and the specified model
-# snapshot. Local scripts are reproducibility templates and may use placeholders
-# where API access is unavailable. Results will differ if a different model
-# snapshot or temperature is used.
-#
 # API keys must be set as environment variables — never hard-code credentials:
 #   export LLM_API_KEY="your-key-here"
 
-generation_model: gpt-4o-2024-08-06   # pinned snapshot used in the paper
-temperature: 0.0                        # deterministic/greedy decoding
+generation_model: gpt-4o-2024-08-06
+temperature: 0.0
 max_tokens: 512
-api_key_env: LLM_API_KEY               # environment variable holding the API key
+api_key_env: LLM_API_KEY
+note: "Exact LLM-based generation requires API access and the specified model snapshot.
+  Local scripts are reproducibility templates and may use placeholders where API
+  access is unavailable."
 
 prompt_templates:
   authenticated_agent:
@@ -34,5 +32,5 @@ prompt_templates:
       Restrict your answer to information available in public knowledge articles only.
 
 generation:
-  max_passage_chars: 1000          # max characters per retrieved passage in context
+  max_passage_chars: 1000
   include_source_attribution: true
