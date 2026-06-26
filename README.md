@@ -13,7 +13,9 @@
 
 ## Reviewer Note
 
-This repository is provided as supplementary reproducibility material for manuscript review. The repository includes scripts, configuration files, summary outputs, and annotation templates aligned with the manuscript. Full public datasets are not redistributed and should be downloaded from their official sources.
+This repository is provided as reviewer-accessible supplementary material for a manuscript prepared for IEEE Access submission. It includes scripts, configuration files, summary result files, and annotation templates aligned with the manuscript. Full public datasets are not redistributed and should be downloaded from their official sources.
+
+This repository does not contain proprietary data, employer data, customer records, confidential CRM configurations, internal system information, commercial deployment metrics, API keys, or private screenshots.
 
 ---
 

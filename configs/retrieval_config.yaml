@@ -1,30 +1,22 @@
 # retrieval_config.yaml
-# Core hyperparameters for the MS-RAG retrieval pipeline.
+# Retrieval pipeline hyperparameters matching the manuscript configuration.
+# All values match those reported in the paper unless otherwise noted.
 
-# BM25 parameters (rank-bm25 BM25Okapi)
 bm25:
-  k1: 1.5     # term-frequency saturation
-  b: 0.75     # length normalization
+  k1: 1.5      # BM25Okapi term-frequency saturation parameter
+  b: 0.75      # BM25Okapi document-length normalization parameter
 
-# Dense retrieval
-dense_model: "all-MiniLM-L6-v2"   # HuggingFace sentence-transformers model
-dense_batch_size: 64
-dense_normalize: true               # L2-normalize for cosine similarity via inner product
+dense:
+  model_name: all-MiniLM-L6-v2   # HuggingFace sentence-transformers model
+  similarity: cosine              # cosine similarity via inner product after L2 normalization
+  index_type: faiss_index_flat_ip # exact inner-product FAISS index
 
-# FAISS index type
-faiss_index_type: "IndexFlatIP"    # exact inner-product search
+retrieval:
+  top_k_per_retriever: 20    # candidates retrieved from each individual retriever
+  rrf_k: 60                  # RRF smoothing constant (Cormack et al., SIGIR 2009)
+  top_m_fused: 5             # top-m passages passed to generation after fusion and dedup
+  deduplication: sha256      # SHA-256 content-hash deduplication
 
-# Reciprocal Rank Fusion
-rrf_k: 60       # RRF constant (higher k = smoother rank contribution)
-top_k_per_retriever: 10  # number of candidates from each individual retriever
-top_m_fused: 10          # final top-m passages after fusion and deduplication
-
-# Deduplication
-deduplication:
-  enabled: true
-  near_duplicate_threshold: null  # set to 0.9 to enable near-duplicate removal
-
-# Confidence escalation
-confidence:
-  threshold: 0.60          # escalate if confidence < threshold
-  empty_escalates: true    # escalate immediately if no passages retrieved
+orchestration:
+  confidence_threshold: 0.65  # escalate to human support if confidence below threshold
+  escalation_top_passages: 3  # number of top passages used for confidence estimation
