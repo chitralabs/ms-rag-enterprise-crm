@@ -1,5 +1,7 @@
 # Data Directory
 
+> **Disclaimer:** This repository contains reproducibility materials for a public-dataset-based academic study. It does not contain proprietary data, employer data, customer records, confidential CRM configurations, internal system information, or commercial deployment metrics. All experiments are designed around publicly available datasets.
+
 This directory contains **no dataset files**. Full datasets are not redistributed
 in this repository in compliance with each dataset's terms of use.
 

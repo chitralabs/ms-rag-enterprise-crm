@@ -41,7 +41,7 @@ q039,hybrid_rrf,"Where can I find my invoice?",0,0,0,Both: grounded
 q040,hybrid_rrf,"Does the platform support two-factor authentication?",0,0,0,Both: grounded
 q041,llm_only,"How do I add a new user to my account?",1,1,1,Both: fabricated admin steps
 q042,llm_only,"What is the data retention policy?",1,1,1,Both: invented retention period
-q043,llm_only,"Can I integrate with Salesforce?",1,1,1,Both: invented integration details
+q043,llm_only,"Can I integrate with third-party CRM platforms?",1,1,1,Both: invented integration details
 q044,llm_only,"How do I set up email notifications?",1,1,1,Both: invented specific settings
 q045,bm25_grounded,"How do I add a new user to my account?",1,1,1,Both: passage lacked specific steps
 q046,bm25_grounded,"What is the data retention policy?",0,0,0,Both: grounded

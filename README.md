@@ -1,13 +1,19 @@
 # Multi-Source RAG Framework for Intelligent Agent Orchestration in Enterprise CRM Systems
 
-**Paper:** "A Multi-Source Retrieval-Augmented Generation Framework for Intelligent Agent Orchestration in Enterprise CRM Systems"  
-**Venue:** IEEE Access, 2026  
+**Manuscript:** "A Multi-Source Retrieval-Augmented Generation Framework for Intelligent Agent Orchestration in Enterprise CRM Systems"  
+**Target venue:** IEEE Access (manuscript under preparation)  
 **Author:** Chitrapradha Ganesan (Senior Member, IEEE) — The University of Texas at Austin  
 **Contact:** chitracrmexpert@gmail.com | ORCID: 0009-0009-1305-1724
 
 ---
 
 > **Disclaimer:** This repository contains reproducibility materials for a public-dataset-based academic study. It does not contain proprietary data, employer data, customer records, confidential CRM configurations, internal system information, or commercial deployment metrics. All experiments are designed around publicly available datasets.
+
+---
+
+## Reviewer Note
+
+This repository is provided as supplementary reproducibility material for manuscript review. The repository includes scripts, configuration files, summary outputs, and annotation templates aligned with the manuscript. Full public datasets are not redistributed and should be downloaded from their official sources.
 
 ---
 
@@ -76,33 +82,28 @@ See [`data/README.md`](data/README.md) for download instructions.
 
 ## Key Results (Public-Dataset Ablation)
 
-### MS MARCO (hybrid vs. baselines)
-| Configuration | ROUGE-L | MRR | P@5 |
-|--------------|---------|-----|-----|
-| BM25-only | 0.371 | 0.598 | 0.541 |
-| Dense-only | 0.408 | 0.641 | 0.597 |
-| **MS-RAG Hybrid** | **0.429** | **0.672** | **0.630** |
+### MS MARCO Passage Ranking — Retrieval Ablation
 
-All differences p < 0.001, paired Wilcoxon test. Retrieval pipeline latency: 274 ms.
+| Configuration | ROUGE-L | MRR | P@5 | Latency (ms) |
+|--------------|---------|-----|-----|-------------|
+| BM25 Keyword-Only | 0.312 | 0.521 | 0.460 | 187 |
+| Dense Vector-Only | 0.371 | 0.583 | 0.540 | 312 |
+| **MS-RAG Proposed** | **0.429** | **0.672** | **0.630** | **274** |
 
-### WixQA (enterprise KB)
-| Configuration | MRR |
-|--------------|-----|
-| BM25-only | 0.340 |
-| Dense-only | 0.499 |
-| **MS-RAG Hybrid** | **0.501** |
+All differences p < 0.001, paired Wilcoxon test.
 
 ### Hallucination Rate (500 CRM-style queries, human-annotated)
-| Configuration | Hallucination Rate |
-|--------------|-------------------|
-| LLM-only (no retrieval) | 34.2% |
-| BM25-grounded | 14.1% |
-| Dense-grounded | 9.3% |
-| **MS-RAG Hybrid** | **7.8%** |
 
-Inter-annotator agreement: κ = 0.81. Relative reduction vs. LLM-only: **77.2%**.
+| Configuration | Hallucination Rate | Relative Reduction vs. LLM-Only |
+|--------------|-------------------|--------------------------------|
+| LLM-Only (no retrieval) | 34.2% | — |
+| BM25 Keyword-Only | 18.7% | −45.3% |
+| Dense Vector-Only | 14.3% | −58.2% |
+| **MS-RAG Proposed** | **7.8%** | **−77.2%** |
 
-> **Note:** LLM generation results may vary unless the exact model snapshot, temperature, and decoding settings are matched. See [`configs/prompt_config.yaml`](configs/prompt_config.yaml) for the settings used in the paper.
+Inter-annotator agreement: κ = 0.81.
+
+> **Note:** LLM generation results may vary unless the exact model snapshot, temperature, and decoding settings are matched. See [`configs/prompt_config.yaml`](configs/prompt_config.yaml) for the settings used in the manuscript.
 
 ---
 
@@ -152,10 +153,9 @@ Follow instructions in [`data/README.md`](data/README.md).
 
 ### Configure
 
-Copy and edit the configs:
 ```bash
 cp configs/retrieval_config.yaml configs/retrieval_config_local.yaml
-# Set your OPENAI_API_KEY (or equivalent) as an environment variable:
+# Set your LLM API key as an environment variable — never hard-code credentials:
 export LLM_API_KEY="your-key-here"
 ```
 
@@ -171,7 +171,7 @@ bash scripts/run_all_experiments.sh
 python scripts/msmarco_ablation.py --config configs/retrieval_config.yaml
 python scripts/msdialog_processing.py --config configs/retrieval_config.yaml
 python scripts/wixqa_ablation.py --config configs/retrieval_config.yaml
-python scripts/hallucination_rate_eval.py --config configs/retrieval_config.yaml --n_queries 500
+python scripts/hallucination_rate_eval.py --annotations annotations/anonymized_hallucination_labels_sample.csv
 ```
 
 Results are written to `results/`.
@@ -180,16 +180,15 @@ Results are written to `results/`.
 
 ## How to Cite
 
-If you use this code or build on this work, please cite:
+If you use this code, please cite the manuscript and repository:
 
 ```bibtex
-@article{ganesan2026msrag,
+@misc{ganesan2026msrag,
   title     = {A Multi-Source Retrieval-Augmented Generation Framework for
                Intelligent Agent Orchestration in Enterprise {CRM} Systems},
   author    = {Ganesan, Chitrapradha},
-  journal   = {IEEE Access},
   year      = {2026},
-  note      = {DOI to be assigned upon publication}
+  note      = {Manuscript prepared for IEEE Access. Repository: https://github.com/chitralabs/ms-rag-enterprise-crm}
 }
 ```
 

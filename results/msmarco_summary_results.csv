@@ -1,4 +1,4 @@
-configuration,MRR,P@5,ROUGE-L,latency_ms
-bm25_only,0.598,0.541,0.371,118
-dense_only,0.641,0.597,0.408,241
-hybrid_rrf,0.672,0.630,0.429,274
+Configuration,ROUGE-L,MRR,P@5,Latency_ms
+BM25 Keyword-Only,0.312,0.521,0.460,187
+Dense Vector-Only,0.371,0.583,0.540,312
+MS-RAG Proposed,0.429,0.672,0.630,274

@@ -1,5 +1,5 @@
-configuration,n_queries,n_agreed,hallucination_rate,cohens_kappa
-llm_only,500,487,0.342,0.81
-bm25_grounded,500,491,0.141,0.81
-dense_grounded,500,489,0.093,0.81
-hybrid_rrf,500,492,0.078,0.81
+Configuration,Hallucination_Rate,Relative_Reduction_vs_LLM,Inter_Annotator_Kappa
+LLM-Only,34.2,,0.81
+BM25 Keyword-Only,18.7,-45.3,0.81
+Dense Vector-Only,14.3,-58.2,0.81
+MS-RAG Proposed,7.8,-77.2,0.81
