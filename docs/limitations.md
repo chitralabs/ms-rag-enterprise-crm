@@ -9,7 +9,7 @@ limitations of the public reproducibility materials in this repository.
 
 **Hybrid retrieval benefit is domain-dependent.**  
 On MS MARCO (lexically diverse web-search queries), the hybrid BM25+dense configuration
-substantially outperforms dense-only (MRR 0.672 vs 0.641). On WixQA (enterprise KB,
+substantially outperforms dense-only (MRR 0.672 vs 0.583). On WixQA (enterprise KB,
 where query and document vocabulary are closely aligned), the hybrid configuration
 performs on par with dense-only (MRR 0.501 vs 0.499). The paper states this boundary
 explicitly and does not claim universal retrieval superiority for the hybrid approach.
