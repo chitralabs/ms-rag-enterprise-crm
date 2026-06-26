@@ -108,7 +108,7 @@ def build_prompt(
 
 def call_llm(
     prompt: Dict[str, str],
-    model: str = "gpt-4o",
+    model: str = "gpt-4o-2024-08-06",
     temperature: float = 0.0,
     max_tokens: int = 512,
     api_key_env: str = "LLM_API_KEY",
