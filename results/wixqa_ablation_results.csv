@@ -1,4 +1,4 @@
-configuration,MRR,P@5
-bm25_only,0.340,0.312
-dense_only,0.499,0.461
-hybrid_rrf,0.501,0.463
+Configuration,MRR,P@1,P@5,Recall_m,n
+BM25 Keyword-Only,0.340,0.205,0.113,0.464,200
+Dense Vector-Only,0.499,0.335,0.152,0.634,200
+MS-RAG Proposed,0.501,0.365,0.152,0.619,200

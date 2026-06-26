@@ -92,6 +92,16 @@ See [`data/README.md`](data/README.md) for download instructions.
 
 All differences p < 0.001, paired Wilcoxon test.
 
+### WixQA Enterprise KB — Retrieval Ablation (n = 200 queries)
+
+| Configuration | MRR | P@1 | P@5 | Recall@m |
+|--------------|-----|-----|-----|---------|
+| BM25 Keyword-Only | 0.340 | 0.205 | 0.113 | 0.464 |
+| Dense Vector-Only | 0.499 | 0.335 | 0.152 | 0.634 |
+| **MS-RAG Proposed** | **0.501** | **0.365** | **0.152** | 0.619 |
+
+Note: on WixQA (closely aligned query/document vocabulary), the hybrid configuration performs on par with dense-only rather than substantially above it — the benefit of the sparse BM25 signal is domain-dependent.
+
 ### Hallucination Rate (500 CRM-style queries, human-annotated)
 
 | Configuration | Hallucination Rate | Relative Reduction vs. LLM-Only |
