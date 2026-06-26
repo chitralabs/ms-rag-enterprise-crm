@@ -210,4 +210,4 @@ See also [`CITATION.cff`](CITATION.cff).
 
 ## License
 
-This repository is released under the [Apache 2.0 License](LICENSE).
+This repository is released under the [MIT License](LICENSE).
