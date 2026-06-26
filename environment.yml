@@ -1,0 +1,20 @@
+name: ms-rag
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy>=1.24
+  - pandas>=2.0
+  - scipy>=1.11
+  - scikit-learn>=1.3
+  - pyyaml>=6.0
+  - tqdm>=4.66
+  - pytest>=8.0
+  - pip
+  - pip:
+    - rank-bm25>=0.2.2
+    - sentence-transformers>=2.7.0
+    - faiss-cpu>=1.8.0
+    - rouge-score>=0.1.2
+    - openai>=1.30.0

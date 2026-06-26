@@ -1,0 +1,5 @@
+configuration,n_queries,n_agreed,hallucination_rate,cohens_kappa
+llm_only,500,487,0.342,0.81
+bm25_grounded,500,491,0.141,0.81
+dense_grounded,500,489,0.093,0.81
+hybrid_rrf,500,492,0.078,0.81

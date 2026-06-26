@@ -1,0 +1,25 @@
+# Core retrieval
+rank-bm25>=0.2.2
+sentence-transformers>=2.7.0
+faiss-cpu>=1.8.0
+
+# Numerics and data
+numpy>=1.24.0
+pandas>=2.0.0
+scipy>=1.11.0
+scikit-learn>=1.3.0
+
+# Evaluation
+rouge-score>=0.1.2
+
+# Configuration
+pyyaml>=6.0
+
+# Progress bars
+tqdm>=4.66.0
+
+# LLM API (optional; required only for hallucination rate experiments)
+openai>=1.30.0
+
+# Development / testing
+pytest>=8.0.0

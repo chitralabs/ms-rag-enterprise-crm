@@ -1,0 +1,51 @@
+query_id,configuration,query_text,annotator_a,annotator_b,agreed_label,notes
+q001,llm_only,"How do I reset my account password?",1,1,1,Both: fabricated specific reset URL
+q002,llm_only,"What are the supported file formats for upload?",1,1,1,Both: listed formats not in passages
+q003,llm_only,"How long does account verification take?",0,0,0,Both: decline response
+q004,llm_only,"Can I export data to Excel?",1,1,1,Both: claimed feature not in passages
+q005,llm_only,"What is the maximum storage limit?",1,1,1,Both: fabricated specific number
+q006,bm25_grounded,"How do I reset my account password?",0,0,0,Both: grounded in retrieved passage
+q007,bm25_grounded,"What are the supported file formats for upload?",1,1,1,Both: added format not in passage
+q008,bm25_grounded,"How long does account verification take?",0,0,0,Both: correctly cited passage
+q009,bm25_grounded,"Can I export data to Excel?",0,1,-1,Disagreement: excluded
+q010,bm25_grounded,"What is the maximum storage limit?",0,0,0,Both: passage contained the limit
+q011,dense_grounded,"How do I reset my account password?",0,0,0,Both: passage retrieved correctly
+q012,dense_grounded,"What are the supported file formats for upload?",0,0,0,Both: grounded
+q013,dense_grounded,"How long does account verification take?",1,1,1,Both: invented timeline
+q014,dense_grounded,"Can I export data to Excel?",0,0,0,Both: grounded in passage
+q015,dense_grounded,"What is the maximum storage limit?",0,0,0,Both: grounded
+q016,hybrid_rrf,"How do I reset my account password?",0,0,0,Both: grounded
+q017,hybrid_rrf,"What are the supported file formats for upload?",0,0,0,Both: grounded
+q018,hybrid_rrf,"How long does account verification take?",0,0,0,Both: grounded
+q019,hybrid_rrf,"Can I export data to Excel?",0,0,0,Both: grounded
+q020,hybrid_rrf,"What is the maximum storage limit?",0,0,0,Both: grounded
+q021,llm_only,"How do I contact technical support?",1,1,1,Both: invented phone number
+q022,llm_only,"What browsers are supported?",1,1,1,Both: listed browsers not in passages
+q023,llm_only,"How do I cancel my subscription?",0,0,0,Both: appropriately declined
+q024,llm_only,"Where can I find my invoice?",1,0,-1,Disagreement: excluded
+q025,llm_only,"Does the platform support two-factor authentication?",1,1,1,Both: invented specific 2FA methods
+q026,bm25_grounded,"How do I contact technical support?",0,0,0,Both: grounded in passage
+q027,bm25_grounded,"What browsers are supported?",1,1,1,Both: added unsupported browser version
+q028,bm25_grounded,"How do I cancel my subscription?",0,0,0,Both: grounded
+q029,bm25_grounded,"Where can I find my invoice?",0,0,0,Both: grounded
+q030,bm25_grounded,"Does the platform support two-factor authentication?",0,0,0,Both: grounded in passage
+q031,dense_grounded,"How do I contact technical support?",0,0,0,Both: grounded
+q032,dense_grounded,"What browsers are supported?",0,0,0,Both: grounded
+q033,dense_grounded,"How do I cancel my subscription?",0,0,0,Both: grounded
+q034,dense_grounded,"Where can I find my invoice?",1,1,1,Both: invented menu path
+q035,dense_grounded,"Does the platform support two-factor authentication?",0,0,0,Both: grounded
+q036,hybrid_rrf,"How do I contact technical support?",0,0,0,Both: grounded
+q037,hybrid_rrf,"What browsers are supported?",0,0,0,Both: grounded
+q038,hybrid_rrf,"How do I cancel my subscription?",0,0,0,Both: grounded
+q039,hybrid_rrf,"Where can I find my invoice?",0,0,0,Both: grounded
+q040,hybrid_rrf,"Does the platform support two-factor authentication?",0,0,0,Both: grounded
+q041,llm_only,"How do I add a new user to my account?",1,1,1,Both: fabricated admin steps
+q042,llm_only,"What is the data retention policy?",1,1,1,Both: invented retention period
+q043,llm_only,"Can I integrate with Salesforce?",1,1,1,Both: invented integration details
+q044,llm_only,"How do I set up email notifications?",1,1,1,Both: invented specific settings
+q045,bm25_grounded,"How do I add a new user to my account?",1,1,1,Both: passage lacked specific steps
+q046,bm25_grounded,"What is the data retention policy?",0,0,0,Both: grounded
+q047,dense_grounded,"How do I add a new user to my account?",0,0,0,Both: grounded
+q048,dense_grounded,"What is the data retention policy?",0,0,0,Both: grounded
+q049,hybrid_rrf,"How do I add a new user to my account?",0,0,0,Both: grounded
+q050,hybrid_rrf,"What is the data retention policy?",0,0,0,Both: grounded

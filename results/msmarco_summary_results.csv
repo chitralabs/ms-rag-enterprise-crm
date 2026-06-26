@@ -1,0 +1,4 @@
+configuration,MRR,P@5,ROUGE-L,latency_ms
+bm25_only,0.598,0.541,0.371,118
+dense_only,0.641,0.597,0.408,241
+hybrid_rrf,0.672,0.630,0.429,274

@@ -1,0 +1,32 @@
+# dataset_config.yaml
+# Paths and settings for each public dataset used in the ablation study.
+# All paths are relative to the repository root.
+# See data/README.md for download instructions for each dataset.
+
+datasets:
+
+  msmarco:
+    name: "MS MARCO Passage Ranking"
+    local_dir: "data/msmarco"
+    split: "dev"
+    max_passages: 100000      # limit for experimentation; full corpus ~8.8M passages
+    files:
+      collection: "collection.tsv"
+      queries_dev: "queries.dev.tsv"
+      qrels_dev: "qrels.dev.tsv"
+    official_url: "https://microsoft.github.io/msmarco/"
+
+  msdialog:
+    name: "MSDialog"
+    local_dir: "data/msdialog"
+    files:
+      intents: "MSDialog-Intent.json"
+    official_url: "https://ciir.cs.umass.edu/downloads/msdialog/"
+
+  wixqa:
+    name: "WixQA"
+    local_dir: "data/wixqa"
+    files:
+      articles: "articles.jsonl"
+      queries: "queries.jsonl"
+    official_url: "https://github.com/wix-incubator/WixQA"

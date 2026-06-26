@@ -1,0 +1,36 @@
+# prompt_config.yaml
+# LLM generation settings used in the paper's hallucination rate experiments.
+#
+# IMPORTANT: LLM generation results may vary unless the exact model snapshot,
+# temperature, and decoding settings listed here are reproduced.
+# API keys must be set as environment variables — never hard-code credentials.
+#   export LLM_API_KEY="your-key-here"
+
+llm:
+  model: "gpt-4o"              # model identifier used in the paper
+  temperature: 0.0             # 0.0 for deterministic/greedy decoding
+  max_tokens: 512
+  api_key_env: "LLM_API_KEY"  # environment variable name for the API key
+
+prompt_templates:
+  authenticated_agent:
+    system: |
+      You are a helpful enterprise knowledge assistant.
+      Answer the user's question using ONLY the information provided in the context passages below.
+      If the passages do not contain enough information to answer the question,
+      respond with: 'I don't have enough information in the available knowledge base to answer this question.'
+      Do not fabricate information or draw on knowledge outside the provided passages.
+
+  public_agent:
+    system: |
+      You are a helpful enterprise knowledge assistant.
+      Answer the user's question using ONLY the information provided in the context passages below.
+      If the passages do not contain enough information to answer the question,
+      respond with: 'I don't have enough information in the available knowledge base to answer this question.'
+      Do not fabricate information or draw on knowledge outside the provided passages.
+      Note: you are serving a public (unauthenticated) user.
+      Restrict your answer to information available in public knowledge articles only.
+
+generation:
+  max_passage_chars: 1000    # maximum characters included per retrieved passage
+  include_source_attribution: true

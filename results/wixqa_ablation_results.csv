@@ -1,0 +1,4 @@
+configuration,MRR,P@5
+bm25_only,0.340,0.312
+dense_only,0.499,0.461
+hybrid_rrf,0.501,0.463

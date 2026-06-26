@@ -1,0 +1,30 @@
+# retrieval_config.yaml
+# Core hyperparameters for the MS-RAG retrieval pipeline.
+
+# BM25 parameters (rank-bm25 BM25Okapi)
+bm25:
+  k1: 1.5     # term-frequency saturation
+  b: 0.75     # length normalization
+
+# Dense retrieval
+dense_model: "all-MiniLM-L6-v2"   # HuggingFace sentence-transformers model
+dense_batch_size: 64
+dense_normalize: true               # L2-normalize for cosine similarity via inner product
+
+# FAISS index type
+faiss_index_type: "IndexFlatIP"    # exact inner-product search
+
+# Reciprocal Rank Fusion
+rrf_k: 60       # RRF constant (higher k = smoother rank contribution)
+top_k_per_retriever: 10  # number of candidates from each individual retriever
+top_m_fused: 10          # final top-m passages after fusion and deduplication
+
+# Deduplication
+deduplication:
+  enabled: true
+  near_duplicate_threshold: null  # set to 0.9 to enable near-duplicate removal
+
+# Confidence escalation
+confidence:
+  threshold: 0.60          # escalate if confidence < threshold
+  empty_escalates: true    # escalate immediately if no passages retrieved

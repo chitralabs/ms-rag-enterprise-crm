@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "MS-RAG: Multi-Source RAG Framework for Intelligent Agent Orchestration in Enterprise CRM Systems"
+authors:
+  - family-names: Ganesan
+    given-names: Chitrapradha
+    email: chitracrmexpert@gmail.com
+    orcid: "https://orcid.org/0009-0009-1305-1724"
+    affiliation: "The University of Texas at Austin"
+repository-code: "https://github.com/chitralabs/ms-rag-enterprise-crm"
+license: Apache-2.0
+version: "1.0.0"
+date-released: "2026-06-26"
+keywords:
+  - retrieval-augmented-generation
+  - enterprise-crm
+  - hybrid-retrieval
+  - BM25
+  - dense-retrieval
+  - hallucination-mitigation
+  - agent-orchestration
+preferred-citation:
+  type: article
+  title: "A Multi-Source Retrieval-Augmented Generation Framework for Intelligent Agent Orchestration in Enterprise CRM Systems"
+  authors:
+    - family-names: Ganesan
+      given-names: Chitrapradha
+      email: chitracrmexpert@gmail.com
+      orcid: "https://orcid.org/0009-0009-1305-1724"
+  journal: "IEEE Access"
+  year: 2026
+  notes: "DOI to be assigned upon publication"
